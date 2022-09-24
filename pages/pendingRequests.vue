@@ -196,29 +196,31 @@ export default {
             title: 'Cancel Transaction',
           })
           .then(async (res) => {
-            try {
-              const data = {
-                cancelMessage: res || '',
-                status: status,
-              }
-              const result = await gameService.updateManualTransferStatus(
-                id,
-                data
-              )
-              if (result.status == 200) {
+            if (res) {
+              try {
+                const data = {
+                  cancelMessage: res || '',
+                  status: status,
+                }
+                const result = await gameService.updateManualTransferStatus(
+                  id,
+                  data
+                )
+                if (result.status == 200) {
+                  this.$notifier.showMessage({
+                    content: 'Status Updated Sucessfully',
+                    color: '#4CAF50',
+                  })
+                }
+              } catch (error) {
+                console.log(error)
                 this.$notifier.showMessage({
-                  content: 'Status Updated Sucessfully',
-                  color: '#4CAF50',
+                  content: 'Something Went Wrong',
+                  color: '#D50000',
                 })
               }
-            } catch (error) {
-              console.log(error)
-              this.$notifier.showMessage({
-                content: 'Something Went Wrong',
-                color: '#D50000',
-              })
+              this.getPaymentDetails()
             }
-            this.getPaymentDetails()
           })
       }
     },
