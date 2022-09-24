@@ -1,87 +1,127 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
+  <div class="text-center bg">
+    <v-card class="card-section">
+      <div class="mt-10">
+        <b>
+          <p class="font-20 headsignup orange-txt">Payment Master Login</p></b
+        >
+      </div>
+      <form @submit.prevent="callLoginApi">
+        <div class="input-field mx-6 mt-6">
+          <div class="mt-3 d-flex">
+            <v-text-field
+              v-model="username"
+              dense
+              label="Username *"
+              type="text"
             >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+            </v-text-field>
           </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+
+          <div class="mt-3 password">
+            <v-text-field
+              dense
+              v-model="password"
+              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="show1 ? 'text' : 'password'"
+              @click:append="show1 = !show1"
+              label="Password *"
+            >
+            </v-text-field>
+          </div>
+          <div class="pt-7 text-center">
+            <v-btn type="submit" class="font-14 orange-btn py-5 mb-5"
+              >LOGIN</v-btn
+            >
+          </div>
+        </div>
+      </form>
+    </v-card>
+  </div>
 </template>
 
 <script>
+import { validationMixin } from 'vuelidate'
+import loginService from '../service/loginService.js'
+
 export default {
-  name: 'IndexPage',
+  name: 'Login',
+  data() {
+    return {
+      username: '',
+      password: '',
+      show1: false,
+    }
+  },
+  mixins: [validationMixin],
+
+  methods: {
+    async callLoginApi() {
+      try {
+        const data = {}
+        data.username = this.username
+        data.password = this.password
+        const result = await loginService.paymentMasterLogin(data)
+        if (result.status === 200) {
+          localStorage.accessToken = result.data.accessToken
+          this.$notifier.showMessage({
+            content: 'Login Successful',
+            color: '#4CAF50',
+          })
+          this.$router.push({
+            path: `pendingRequests`,
+          })
+        }
+      } catch (error) {
+        console.log(error)
+        this.$notifier.showMessage({
+          content: 'Incorrect Username or password',
+          color: '#D50000',
+        })
+      }
+    },
+  },
 }
 </script>
+
+<style lang="scss">
+.card-section {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #20221f !important;
+  border: 5px solid #f26d25 !important;
+  opacity: 0.9;
+  width: 85vw;
+  max-width: 600px !important;
+}
+.input-field {
+  .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+    border-color: white !important;
+  }
+  .theme--light.v-label {
+    color: white !important;
+  }
+  .theme--light.v-input input,
+  .theme--light.v-input textarea {
+    color: white !important;
+  }
+  .v-application .primary--text {
+    color: white !important;
+    caret-color: white !important;
+  }
+  .v-label {
+    font-size: 14px !important;
+  }
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  background: url('https://wallpapercave.com/wp/wp3049846.jpg') no-repeat center
+    center;
+  background-size: cover;
+}
+.password .mdi:before {
+  color: white;
+}
+</style>

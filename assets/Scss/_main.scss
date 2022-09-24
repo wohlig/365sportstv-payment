@@ -1,0 +1,324 @@
+@import "@/assets/Scss/_variables.scss";
+
+//   Font Size
+.font-8 {
+  font-size: 0.5rem;
+}
+.font-9 {
+  font-size: 0.5625rem !important;
+}
+.font-10 {
+  font-size: 0.625rem !important;
+}
+.font-11 {
+  font-size: 0.6875rem;
+}
+.font-12 {
+  font-size: 0.75rem !important;
+}
+.font-13 {
+  font-size: 0.8125rem !important;
+}
+.font-14 {
+  font-size: 0.875rem;
+}
+.font-15 {
+  font-size: 0.9375rem;
+}
+.font-16 {
+  font-size: 1rem !important;
+}
+.font-17 {
+  font-size: 1.0625rem;
+}
+.font-18 {
+  font-size: 1.125rem;
+}
+.font-19 {
+  font-size: 1.1875rem;
+}
+.font-20 {
+  font-size: 1.25rem;
+}
+.font-21 {
+  font-size: 1.3125rem;
+}
+.font-22 {
+  font-size: 1.375rem;
+}
+.font-23 {
+  font-size: 1.4375rem;
+}
+.font-24 {
+  font-size: 1.5rem;
+}
+.font-25 {
+  font-size: 1.5625rem;
+}
+.font-26 {
+  font-size: 1.625rem;
+}
+.font-27 {
+  font-size: 1.6875rem;
+}
+.font-28 {
+  font-size: 1.75rem;
+}
+.font-29 {
+  font-size: 1.8125rem;
+}
+.font-30 {
+  font-size: 1.875rem;
+}
+.font-34 {
+  font-size: 2.125rem !important;
+}
+
+// *{
+//   background-color: rgb(55, 55, 55);
+// }
+.white-txt {
+  color: white !important;
+}
+.sub-txt {
+  color: #8d8c8c !important;
+}
+.field {
+  background-color: #1b1b1b !important;
+}
+.gray-txt {
+  color: #8f8d8d !important;
+}
+.orange-txt {
+  color: #f26d25 !important;
+}
+.orange-btn {
+  width: 100%;
+  background: #f26d25 !important;
+  color: white !important;
+}
+.vl {
+  border-left: 2px solid #f26d25;
+  height: 20px;
+}
+
+@media only screen and (min-width: 960px) {
+}
+
+@media only screen and (max-width: 767px) {
+}
+
+@media only screen and (min-device-width: 991px) and (max-device-width: 1200px) {
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 991px) {
+}
+
+.bg1 {
+  color: #2cac31 !important;
+}
+.bg2 {
+  color: #e2635b !important;
+}
+.bg3 {
+  color: #d4c218 !important;
+}
+
+.v-list-item__icon {
+  margin: 0 !important;
+}
+.v-list-item {
+  min-height: 52px !important;
+}
+.v-list-item__icon {
+  align-self: center !important;
+  margin-right: 10px !important;
+}
+.v-list .v-list-item--active {
+  color: #ffffff !important;
+}
+.index {
+  margin-top: 50px;
+  margin-left: 7vw;
+  margin-right: 5vw;
+}
+
+.layout {
+  display: flex;
+  margin-top: 2%;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+}
+.modal-dialog {
+  max-width: 900px !important;
+  z-index: 1000;
+}
+.modal-title {
+  font-family: Roboto !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  color: #000000 !important;
+}
+a {
+  text-decoration: none !important;
+
+  color: black !important;
+}
+.bottomspace {
+  height: 30px;
+}
+.body {
+  background: #9a9a9a !important;
+}
+.fade:not(.show) {
+  opacity: 1 !important;
+}
+.v-input--selection-controls {
+  margin-top: 0px !important;
+  padding-top: 0px !important;
+}
+.v-application--is-ltr
+  .v-list-group--no-action
+  > .v-list-group__items
+  > .v-list-item {
+  padding-left: 20px !important;
+}
+
+thead {
+  background-color: black !important;
+  color: white !important;
+}
+.theme--light.v-date-picker-table th,
+.theme--light.v-date-picker-table .v-date-picker-table--date__week {
+  color: #fff !important;
+}
+.v-data-footer {
+  background-color: black !important;
+  color: white !important;
+  height: 40px !important;
+  margin-bottom: 15px;
+  align-content: center !important;
+}
+.theme--light.v-select .v-select__selections {
+  color: white !important;
+}
+.v-list .v-list-item--active {
+  color: #64b5f6 !important;
+}
+.v-data-table__wrapper {
+  border-radius: 20px 20px 0px 0px !important;
+}
+.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th {
+  color: white !important;
+}
+.mdi:before,
+.mdi-set {
+  color: white !important;
+}
+.v-picker__title {
+  display: none;
+}
+.custom-picker-section th {
+  color: white !important;
+}
+
+.mdi:before,
+.mdi-set {
+  color: grey !important;
+}
+.v-picker__body {
+  width: 100% !important;
+  height: 100% !important;
+}
+.month {
+  color: black !important;
+}
+.dropdown {
+  background-color: none;
+  color: black;
+}
+.v-btn.orange-btn {
+  background-color: #f26d25 !important;
+}
+button.v-btn.v-date-picker-table__current.v-btn--active.v-btn--text.v-btn--rounded.theme--light.accent {
+  background-color: #000000 !important;
+  border-color: #eeeeee !important;
+}
+button.v-btn.v-btn--active.v-btn--rounded.theme--light.accent {
+  background-color: #000000 !important;
+  border-color: #eeeeee !important;
+}
+button.v-btn.v-date-picker-table__current.v-btn--rounded.v-btn--outlined.theme--light.accent--text {
+  color: #000000 !important;
+  caret-color: #000000 !important;
+}
+
+.v-autocomplete__content.v-menu__content {
+  z-index: 1056 !important;
+}
+.daterangepicker.openscenter[data-v-1ebd09d2] {
+  right: auto;
+  left: 100% !important;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+.v-input__control {
+  height: 40px !important;
+}
+.v-text-field__slot {
+  color: #a3a3a3 !important;
+}
+::placeholder {
+  color: #a3a3a3 !important;
+}
+.sub-text {
+  color: #656565 !important;
+}
+.submitbut {
+  color: white !important;
+}
+.vue-country-select .dropdown-list {
+  width: 70vw !important;
+  max-width: 386px;
+}
+// .vue-country-select {
+//   height: 32px;
+// }
+.v-input__control {
+  display: flex !important;
+  height: auto;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  min-width: 0;
+  width: 100%;
+  flex-direction: row !important;
+}
+.vue-country-select .search-field input {
+  color: white !important;
+}
+.vue-country-select .dropdown-item.highlighted {
+  background-color: #f26d25 !important;
+}
+@media only screen and (max-width: 720px) {
+  .v-data-footer {
+    height: 100% !important;
+  }
+  .black-txt {
+    color: black !important;
+  }
+}
+#input-182 {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255) !important;
+  opacity: 1 !important; /* Firefox */
+}
+.mdi-checkbox-marked-circle::before {
+  content: "\F0133";
+  color: green !important;
+}
+.mdi-close-circle::before {
+  content: "\F0159";
+  color: red !important;
+}
